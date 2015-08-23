@@ -12,6 +12,7 @@
 #include <string>
 
 #include "../corelib/singleton.h"
+#include "service.h"
 
 
 class service;

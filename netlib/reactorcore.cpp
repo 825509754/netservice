@@ -1,6 +1,7 @@
 #include "reactorcore.h"
-//#include "service.h"
 //#include "application.h"
+
+#include<string.h>
 
 template<> ReactorCore* Singleton<ReactorCore>::instance = 0;
 

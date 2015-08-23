@@ -1,25 +1,27 @@
-#netsession.o:netsession.cpp netsession.h
-#	cc -std=gnu++0x -c -g netsession.cpp
 
-#application.o:application.cpp application.h
-#	cc -std=gnu++0x -c -g application.cpp
+SRCS := netsession.cpp reactorcore.cpp application.cpp
+OBJS := $(SRCS:%.cpp=%.o)
+#OBJS = netsession.o application.o reactorcore.o
+CXXFLAGS = -std=c++11 -g -Wall -O2
 
-#clean:
-#	rm -f *.o
-OBJS = netsession.o application.o reactorcore.o
+LIB_NET_DIR := ../lib
 
-LIBEVENT_INC ?=../3rd/libevent/include
+LIB_NET = libnet.a
 
-libnet.a:$(OBJS)
-	g++ ar -rc -std=c++11 -g -O2 libnet.a
+$(LIB_NET):$(OBJS)
+	ar rc $(LIB_NET)
 
 netsession.o:netsession.cpp netsession.h
-	g++ -std=c++11 -g -O2 -I$(LIBEVENT_INC) netsession.cpp -o netsession.o
+	$(CXX) $(CXXFLAGS) -c netsession.cpp -o netsession.o
 
-application.o:application.cpp appliction.h
-	g++ -std=c++11 -g -O2 -I$(LIBEVENT_INC) application -o application.o
+reactorcore.o:reactorcore.cpp reactorcore.h service.h
+	$(CXX) $(CXXFLAGS) -c reactorcore.cpp -o reactorcore.o
+	
+application.o:application.cpp application.h
+	$(CXX) $(CXXFLAGS) -c application.cpp -o application.o
 
-reactorcore.o:reactorcore.cpp reactorcore.h
-	g++ -std=c++11 -g -O2 -I$(LIBEVENT_INC) reactorcore -o reactorcore.o
+.PHONY: clean
+clean:
+	rm -f *.o
 
 

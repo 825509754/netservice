@@ -10,7 +10,7 @@
 #include "reactorcore.h"
 
 
-class service;
+//class service;
 class Appliction
 {
 public:
