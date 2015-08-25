@@ -1,2 +1,19 @@
-libcore.a:singleton.h
-	ar -rc libcore.a
+SRCS := io_buffer.cpp
+OBJS := $(SRCS:%.cpp=%.o)
+
+CXXFLAGS = -std=c++11 -g -Wall -O2
+
+LIB_CORE = libcore.a
+
+$(LIB_CORE):$(OBJS)
+	ar rc $(LIB_CORE) -o $(OBJS)
+
+io_buffer.o:io_buffer.cpp io_buffer.h malloc.h lock.h
+	$(CXX) $(CXXFLAGS) -c io_buffer.cpp -o io_buffer.o
+
+singleton.o:singleton.cpp singleton.h
+	$(CXX) $(CXXFLAGS) -c singleton.cpp -o singleton.o
+	
+.PHONY:clean
+clean:
+	rm -f *.o	

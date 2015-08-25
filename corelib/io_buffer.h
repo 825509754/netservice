@@ -2,7 +2,7 @@
 #define IO_BUFFER_H
 
 #include <string.h>
-#include "Lock.h"
+#include "lock.h"
 
 class iobuffer
 {

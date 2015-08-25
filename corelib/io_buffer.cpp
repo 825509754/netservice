@@ -1,6 +1,8 @@
 #include "io_buffer.h"
-#include "Common.h"
 #include "malloc.h"
+
+
+#define MAX_SEND_BUFFER 64
 
 iobuffer::iobuffer()
 {
