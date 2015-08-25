@@ -4,12 +4,11 @@ OBJS := $(SRCS:%.cpp=%.o)
 #OBJS = netsession.o application.o reactorcore.o
 CXXFLAGS = -std=c++11 -g -Wall -O2
 
-LIB_NET_DIR := ../lib
-
-LIB_NET = libnet.a
+LIB_DIR := ../lib/
+LIB_NET = $(LIB_DIR)libnet.a
 
 $(LIB_NET):$(OBJS)
-	ar rc $(LIB_NET)
+	ar rc $(LIB_NET) $(OBJS)
 
 netsession.o:netsession.cpp netsession.h
 	$(CXX) $(CXXFLAGS) -c netsession.cpp -o netsession.o
