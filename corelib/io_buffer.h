@@ -1,3 +1,4 @@
+#pragma once
 #ifndef IO_BUFFER_H
 #define IO_BUFFER_H
 

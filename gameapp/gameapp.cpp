@@ -12,6 +12,7 @@ bool GameApp::init()
 
 bool GameApp::onUpdate(double elapsed)
 {
+	printf("frame time %lf", elapsed);
 	return true;
 }
 

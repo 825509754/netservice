@@ -2,7 +2,7 @@
 SRCS := gameserver.cpp gameapp.cpp socketservice.cpp
 OBJS := $(SRCS:%.cpp=%.o)
 
-LIB_DIR = ../lib
+LIB_DIR = ../lib/
 
 CXXFLAGS = -std=c++11 -g -Wall -O2
 

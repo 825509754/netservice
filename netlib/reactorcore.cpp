@@ -3,7 +3,7 @@
 
 #include<string.h>
 
-template<> ReactorCore* Singleton<ReactorCore>::instance = 0;
+//template<> ReactorCore* Singleton<ReactorCore>::instance = 0;
 
 void on_accept(struct evconnlistener *listener, evutil_socket_t fd, struct sockaddr *sa, int socklen, void *p)
 {

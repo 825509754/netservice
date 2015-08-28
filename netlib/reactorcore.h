@@ -1,3 +1,4 @@
+#pragma once
 #ifndef REATOR_CORE_H
 #define REATOR_CORE_H
 
@@ -15,12 +16,9 @@
 #include "service.h"
 
 
-class service;
+//class service;
 class ReactorCore: public Singleton<ReactorCore>
 {
-public:
-	friend Singleton<ReactorCore>;
-
 public:
 	bool init();
 
