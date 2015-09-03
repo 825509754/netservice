@@ -17,5 +17,7 @@ int main(int argc, char **argv)
 	app.add_service(service);
 	app.start_service();
 	
+	delete service;
+	
 	return 0;
 }
